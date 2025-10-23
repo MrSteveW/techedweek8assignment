@@ -19,7 +19,7 @@ export default function AddPost() {
   return (
     <div className="h-screen bg-amber-200">
       <div>Add new post form</div>
-      <div class="flex flex-wrap -mx-3 mb-6"></div>
+      <div className="flex flex-wrap -mx-3 mb-6"></div>
       <form action={handleSubmit}>
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           {/* USERNAME */}

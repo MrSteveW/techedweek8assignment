@@ -1,4 +1,5 @@
-import Link from "next/link";
+import NavBar from "../components/NavBar";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -23,14 +24,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="w-full flex justify-between">
-          <div className="m-2">Sliced Bread</div>
-          <nav className="mr-2">
-            <Link href="/">Home .</Link>
-            <Link href="/posts">Posts .</Link>
-            <Link href="/add-post">Add new post .</Link>
-          </nav>
-        </div>
+        <NavBar />
         {children}
         <footer className="fixed bottom-2">Made by Steve</footer>
       </body>
