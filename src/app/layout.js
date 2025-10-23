@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
           <nav className="mr-2">
             <Link href="/">Home .</Link>
             <Link href="/posts">Posts .</Link>
-            <Link href="/posts">Add new post .</Link>
+            <Link href="/add-post">Add new post .</Link>
           </nav>
         </div>
         {children}
