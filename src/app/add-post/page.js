@@ -23,10 +23,7 @@ export default function AddPost() {
       <form action={handleSubmit}>
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           {/* USERNAME */}
-          <label
-            className="block text-gray-700 text-bg font-bold mb-2"
-            for="username"
-          >
+          <label className="block text-gray-700 text-bg font-bold mb-2">
             Username
           </label>
           <input
@@ -37,7 +34,7 @@ export default function AddPost() {
             required
           />
           {/* TITLE */}
-          <label class="block text-gray-700 text-bg font-bold mb-2" for="title">
+          <label class="block text-gray-700 text-bg font-bold mb-2">
             Title
           </label>
           <input
@@ -49,9 +46,7 @@ export default function AddPost() {
           />
         </div>
         {/* CONTENT */}
-        <label class="block text-gray-700 text-bg font-bold mb-2" for="content">
-          Post
-        </label>
+        <label class="block text-gray-700 text-bg font-bold mb-2">Post</label>
         <input
           className=" block w-1/4 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
           name="content"
@@ -60,7 +55,7 @@ export default function AddPost() {
           required
         />
         {/* IMG */}
-        <label class="block text-gray-700 text-bg font-bold mb-2" for="img">
+        <label class="block text-gray-700 text-bg font-bold mb-2">
           Image link
         </label>
         <input

@@ -25,7 +25,7 @@ export default async function IndividualPost({ params }) {
           <h2>{post.content}</h2>
         </div>
       </div>
-      <AddComment />
+      <AddComment id={post.id} />
       <Comments id={post.id} />
     </div>
   );
