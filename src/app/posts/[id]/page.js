@@ -3,6 +3,7 @@ import { db } from "@/utils/utilities";
 import Image from "next/image";
 import AddComment from "@/components/AddComment";
 import Comments from "@/components/Comments";
+import Link from "next/link";
 
 export default async function IndividualPost({ params }) {
   const objectParams = await params;
@@ -10,7 +11,6 @@ export default async function IndividualPost({ params }) {
   const post = (
     await db.query(`SELECT * FROM posts WHERE id = ${objectParams.id}`)
   ).rows[0];
-
   return (
     <div className="h-screen bg-blue-300 justify-items-center">
       <div className="bg-amber-200 flex flex-row w-1/2 p-4 mb-4">
@@ -23,6 +23,7 @@ export default async function IndividualPost({ params }) {
           <h2>{post.title}</h2>
           <h2>By {post.username}</h2>
           <h2>{post.content}</h2>
+          <Link href={`/posts/${post.id}/edit`}>Edit post</Link>
         </div>
       </div>
       <AddComment id={post.id} />
