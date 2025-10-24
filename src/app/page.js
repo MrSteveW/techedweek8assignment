@@ -6,7 +6,7 @@ export default function Home() {
     <div className="h-screen">
       <div className="flex justify-center items-center">
         <Image src={logobig} alt="" height={200} />
-        <div className="text-6xl font-fugaz bg-sliced-blue p-2 rounded-2xl  text-white">
+        <div className="text-6xl font-fugaz bg-sliced-blue p-4 rounded-2xl  text-white">
           Sliced Bread
         </div>
       </div>

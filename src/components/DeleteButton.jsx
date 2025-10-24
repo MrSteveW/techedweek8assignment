@@ -6,6 +6,7 @@ export default function DeleteButton({ commentId, postId, handleDelete }) {
       onClick={() => {
         handleDelete(commentId, postId);
       }}
+      className="delete-button"
     >
       Delete comment
     </button>

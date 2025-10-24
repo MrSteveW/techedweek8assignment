@@ -16,11 +16,13 @@ export default async function Comments({ id }) {
   ).rows;
   return (
     <div className="w-full justify-items-center">
-      <div className="w-1/2 bg-red-200 flex flex-col ">
+      <div className="w-1/2 flex flex-col ">
         {comments.map((comment) => (
-          <div key={comment.id} className=" bg-green-300 p-4 mb-4">
-            <p>{comment.username}</p>
-            {/* <p>Posted on {comment.created_at}</p> */}
+          <div key={comment.id} className=" bg-green-300 p-4 mb-4 rounded-2xl">
+            <p className="font-bold">
+              {comment.username} on{" "}
+              {new Date(comment.created_at).toLocaleDateString("en-GB")}
+            </p>
             <p>{comment.content}</p>
             <DeleteButton
               commentId={comment.id}

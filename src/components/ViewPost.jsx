@@ -18,7 +18,7 @@ export default async function ViewPost({ post }) {
         {user.username == post.username && (
           <Link
             href={`/posts/${post.id}/edit`}
-            className="italic border rounded-lg p-1 bg-sliced-cyan hover:bg-sliced-blue hover:text-white"
+            className="italic  rounded-lg p-1.5 bg-sliced-cyan hover:bg-sliced-blue hover:text-white"
           >
             Edit post
           </Link>

@@ -18,4 +18,26 @@ body {
 
 .submit-button {
   background-color: var(--color-sliced-cyan);
+  padding: 0.5em;
+  border-radius: 0.5em;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: var(--color-sliced-purple);
+  color: white;
+}
+
+.delete-button {
+  background-color: red;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: var(--color-sliced-purple);
+  color: white;
 }

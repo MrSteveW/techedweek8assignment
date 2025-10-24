@@ -25,7 +25,7 @@ export default function AddPost({ handleSubmit, post }) {
             <label className="block text-gray-700 text-bg font-bold mb-2">
               Post
             </label>
-            <input
+            <textarea
               className={styles.input}
               name="content"
               id="content"
