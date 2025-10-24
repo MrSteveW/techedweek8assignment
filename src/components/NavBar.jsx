@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NavBar() {
   return (
-    <div className="w-full flex justify-between">
+    <div className="w-full flex justify-between bg-sliced-blue font-fugaz text-white">
       <div className="m-2">Sliced Bread</div>
       <nav className="mr-2">
         <Link href="/">Home .</Link>

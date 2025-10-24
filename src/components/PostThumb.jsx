@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Post({ post }) {
   return (
     <Link href={`posts/${post.id}`}>
-      <div className="border bg-gray-700 flex">
+      <div className="border bg-sliced-purple flex">
         <div className="h-30 w-20 relative m-1">
           <Image src={post.img} alt="" fill={true} />
         </div>

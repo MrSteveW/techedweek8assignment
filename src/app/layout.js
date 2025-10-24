@@ -1,16 +1,18 @@
 import NavBar from "../components/NavBar";
-import bg from "../../public/bg.webp";
 
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fugaz_One } from "next/font/google";
+import { Krub } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fugaz = Fugaz_One({
+  variable: "--font-fugaz",
+  weight: "400",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const krub = Krub({
+  variable: "--font-krub",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -22,12 +24,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${fugaz.variable} ${krub.variable} antialiased`}>
         <NavBar />
         {children}
-        <footer className="fixed bottom-2">Made by Steve</footer>
+        <footer className="w-full p-2 fixed bottom-0 bg-sliced-blue text-center">
+          Made by Steve
+        </footer>
       </body>
     </html>
   );

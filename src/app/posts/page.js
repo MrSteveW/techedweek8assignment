@@ -1,7 +1,7 @@
 // LOOK AT ALL POSTS
 import { db } from "@/utils/utilities";
 import Link from "next/link";
-import Post from "@/components/Post";
+import PostThumb from "@/components/PostThumb";
 
 export default async function AllPosts({ searchParams }) {
   const query = await searchParams;
@@ -16,7 +16,7 @@ export default async function AllPosts({ searchParams }) {
   }
 
   return (
-    <div className="h-screen bg-slate-600">
+    <div className="h-screen">
       <div className="text-center m-4">
         Sort by <Link href="/posts/?sort=asc">ASC</Link> or{" "}
         <Link href="/posts/?sort=desc">DESC</Link>
@@ -24,7 +24,7 @@ export default async function AllPosts({ searchParams }) {
       <div className="flex">
         {sortedPosts.map((post) => (
           <div key={post.id} className="w-1/5 m-4">
-            <Post post={post} />
+            <PostThumb post={post} />
           </div>
         ))}
       </div>

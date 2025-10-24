@@ -12,7 +12,7 @@ export default async function IndividualPost({ params }) {
     await db.query(`SELECT * FROM posts WHERE id = ${objectParams.id}`)
   ).rows[0];
   return (
-    <div className="h-screen bg-blue-300 justify-items-center">
+    <div className="h-screen justify-items-center">
       <div className="bg-amber-200 flex flex-row w-1/2 p-4 mb-4">
         {post.img ? (
           <div className="h-30 w-20 relative m-1">
