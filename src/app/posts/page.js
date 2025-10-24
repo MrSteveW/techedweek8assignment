@@ -18,11 +18,11 @@ async function AllPosts({ searchParams }) {
 
   return (
     <div className="h-screen">
-      <div className="text-center m-4">
-        Sort by <Link href="/posts/?sort=asc">ASC</Link> or{" "}
-        <Link href="/posts/?sort=desc">DESC</Link>
+      <div className="text-center m-4 text-xl text-white">
+        <Link href="/posts/?sort=asc">ascending</Link> or{" "}
+        <Link href="/posts/?sort=desc">descending</Link>
       </div>
-      <div className="flex">
+      <div className="flex flex-wrap">
         {sortedPosts.map((post) => (
           <div key={post.id} className="w-1/5 m-4">
             <PostThumb post={post} />

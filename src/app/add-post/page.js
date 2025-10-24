@@ -4,9 +4,9 @@ import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { db } from "@/utils/utilities";
-import PostForm from "@/components/PostForm";
+import AddPost from "@/components/AddPost";
 
-async function AddPost() {
+async function AddPostPage() {
   const user = await currentUser();
 
   async function handleSubmit(formData) {
@@ -24,9 +24,12 @@ async function AddPost() {
 
   return (
     <div className="h-screen">
-      <PostForm handleSubmit={handleSubmit} />
+      <div className="w-full  bg-sliced-blue text-white p-4 text-2xl text-center">
+        Let`s talk
+      </div>
+      <AddPost handleSubmit={handleSubmit} />
     </div>
   );
 }
 
-export default withAuth(AddPost);
+export default withAuth(AddPostPage);
