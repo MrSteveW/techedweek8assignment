@@ -1,20 +1,8 @@
 export default function PostForm({ handleSubmit, post }) {
   return (
-    <div className="w-full px-3 mb-6 md:mb-0 bg-amber-300">
+    <div className="w-full px-3 mb-6 md:mb-0 bg-white">
       <form action={handleSubmit}>
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-          {/* USERNAME */}
-          <label className="block text-gray-700 text-bg font-bold mb-2">
-            Username
-          </label>
-          <input
-            className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            name="username"
-            id="username"
-            type="text"
-            defaultValue={post?.username || ""}
-            required
-          />
           {/* TITLE */}
           <label className="block text-gray-700 text-bg font-bold mb-2">
             Title

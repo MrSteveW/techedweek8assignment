@@ -1,11 +1,12 @@
-// INDIVIDUAL POST PAGE
+// INDIVIDUAL POST PAGE - SECURED
+import { withAuth } from "@/utils/withAuth";
 import { db } from "@/utils/utilities";
 import Image from "next/image";
 import AddComment from "@/components/AddComment";
 import Comments from "@/components/Comments";
 import Link from "next/link";
 
-export default async function IndividualPost({ params }) {
+async function IndividualPost({ params }) {
   const objectParams = await params;
 
   const post = (
@@ -31,3 +32,5 @@ export default async function IndividualPost({ params }) {
     </div>
   );
 }
+
+export default withAuth(IndividualPost);

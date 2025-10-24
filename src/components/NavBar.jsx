@@ -1,14 +1,22 @@
+import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 
-export default function NavBar() {
+export default async function NavBar() {
+  const user = await currentUser();
   return (
-    <div className="w-full flex justify-between bg-sliced-blue font-fugaz text-white">
-      <div className="m-2">Sliced Bread</div>
-      <nav className="mr-2">
-        <Link href="/">Home .</Link>
-        <Link href="/posts">Posts .</Link>
-        <Link href="/add-post">Add new post .</Link>
+    <div className="w-full h-10 flex items-center bg-sliced-blue font-fugaz text-white text-xl">
+      <nav>
+        <Link href="/" className="m-4">
+          Home
+        </Link>
+        <Link href="/posts" className="m-4">
+          Posts
+        </Link>
+        <Link href="/add-post" className="m-4">
+          Add new post
+        </Link>
       </nav>
+      <div className="fixed right-30">{user.username}</div>
     </div>
   );
 }

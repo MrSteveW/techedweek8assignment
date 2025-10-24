@@ -1,14 +1,24 @@
-// EDIT INDIVIDUAL POST
+// EDIT INDIVIDUAL POST - SECURED
+import { withAuth } from "@/utils/withAuth";
+import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { db } from "@/utils/utilities";
 import PostForm from "@/components/PostForm";
 
-export default async function EditPost({ params }) {
+async function EditPost({ params }) {
+  const user = await currentUser();
   const { id } = await params;
-
   const post = (await db.query(`SELECT * FROM posts WHERE id = $1`, [id]))
     .rows[0];
+
+  if (post.username != user.username) {
+    return (
+      <div className="w-full fixed top-30 bg-sliced-blue text-white p-4 text-2xl text-center">
+        You may only edit your posts
+      </div>
+    );
+  }
 
   async function handleSubmit(formData) {
     "use server";
@@ -35,3 +45,5 @@ export default async function EditPost({ params }) {
     </div>
   );
 }
+
+export default withAuth(EditPost);

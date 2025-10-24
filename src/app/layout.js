@@ -1,3 +1,4 @@
+import { auth, currentUser } from "@clerk/nextjs/server";
 import {
   ClerkProvider,
   SignInButton,
@@ -29,17 +30,19 @@ export const metadata = {
   description: "Is it as good as sliced bread?",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const { isAuthenticated } = await auth();
+
   return (
     <ClerkProvider>
       <html lang="en">
         <body className={`${fugaz.variable} ${krub.variable} antialiased`}>
-          <NavBar />
-          <div className="w-full fixed bottom-60 text-center text-white">
+          {isAuthenticated && <NavBar />}
+          <div className="fixed top-2 right-15 text-center text-white">
             <SignedOut>
-              <SignInButton className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer" />
+              <SignInButton className="bg-sliced-cyan text-black rounded-full text-sm  h-10 sm:h-12 px-3 mr-4 cursor-pointer hover:text-white hover:bg-sliced-purple" />
               <SignUpButton>
-                <button className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
+                <button className="bg-sliced-cyan text-black rounded-full text-sm  h-10 sm:h-12 px-3 mr-4 cursor-pointer hover:text-white hover:bg-sliced-purple">
                   Sign Up
                 </button>
               </SignUpButton>

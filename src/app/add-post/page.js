@@ -1,27 +1,32 @@
-// ADD A NEW POST
+// ADD A NEW POST - SECURED
+import { withAuth } from "@/utils/withAuth";
+import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { db } from "@/utils/utilities";
 import PostForm from "@/components/PostForm";
 
-export default function AddPost() {
+async function AddPost() {
+  const user = await currentUser();
+
   async function handleSubmit(formData) {
     "use server";
 
-    const { username, title, content, img } = Object.fromEntries(formData);
+    const { title, content, img } = Object.fromEntries(formData);
 
     const newPost = db.query(
       `INSERT INTO posts (username, title, content, img) VALUES ($1, $2, $3, $4)`,
-      [username, title, content, img]
+      [user.username, title, content, img]
     );
     revalidatePath("/posts");
     redirect("/posts");
   }
 
   return (
-    <div className="h-screen bg-amber-200">
-      <div>Add new post form</div>
+    <div className="h-screen">
       <PostForm handleSubmit={handleSubmit} />
     </div>
   );
 }
+
+export default withAuth(AddPost);

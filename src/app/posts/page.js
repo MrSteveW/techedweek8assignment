@@ -1,9 +1,10 @@
-// LOOK AT ALL POSTS
+// LOOK AT ALL POSTS - SECURED
+import { withAuth } from "@/utils/withAuth";
 import { db } from "@/utils/utilities";
 import Link from "next/link";
 import PostThumb from "@/components/PostThumb";
 
-export default async function AllPosts({ searchParams }) {
+async function AllPosts({ searchParams }) {
   const query = await searchParams;
 
   const posts = (await db.query(`SELECT * FROM posts`)).rows;
@@ -31,3 +32,5 @@ export default async function AllPosts({ searchParams }) {
     </div>
   );
 }
+
+export default withAuth(AllPosts);

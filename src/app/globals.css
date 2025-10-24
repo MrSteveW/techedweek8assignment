@@ -3,6 +3,7 @@
 @theme inline {
   --color-sliced-blue: #023d67;
   --color-sliced-purple: #8160fd;
+  --color-sliced-cyan: #00e7d3;
   --font-sans: var(--font-geist-sans);
 }
 
