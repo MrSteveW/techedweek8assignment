@@ -15,3 +15,7 @@ body {
   font-family: Krub;
   background-image: url("/bg.webp");
 }
+
+.submit-button {
+  background-color: var(--color-sliced-cyan);
+}

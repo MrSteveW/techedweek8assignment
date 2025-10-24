@@ -24,7 +24,7 @@ async function AllPosts({ searchParams }) {
       </div>
       <div className="flex flex-wrap">
         {sortedPosts.map((post) => (
-          <div key={post.id} className="w-1/5 m-4">
+          <div key={post.id} className="w-1/4 m-4">
             <PostThumb post={post} />
           </div>
         ))}

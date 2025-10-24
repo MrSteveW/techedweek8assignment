@@ -5,20 +5,20 @@ import Image from "next/image";
 export default async function ViewPost({ post }) {
   const user = await currentUser();
   return (
-    <div className="bg-sliced-purple flex flex-row w-1/2 p-4 mb-4">
+    <div className="bg-sliced-purple flex flex-row w-1/2 p-4 mb-4 rounded-2xl">
       {post.img ? (
         <div className="h-30 w-20 relative m-1">
           <Image src={post.img} alt="" fill={true} />
         </div>
       ) : null}
-      <div className="m-2">
-        <h2>{post.title}</h2>
-        <h2>By {post.username}</h2>
-        <h2>{post.content}</h2>
+      <div>
+        <div className="m-2">{post.title}</div>
+        <div className="m-2">By {post.username}</div>
+        <div className="m-2">{post.content}</div>
         {user.username == post.username && (
           <Link
             href={`/posts/${post.id}/edit`}
-            className="italic border rounded-lg p-1"
+            className="italic border rounded-lg p-1 bg-sliced-cyan hover:bg-sliced-blue hover:text-white"
           >
             Edit post
           </Link>

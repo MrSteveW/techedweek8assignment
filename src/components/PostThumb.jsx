@@ -4,8 +4,8 @@ import Image from "next/image";
 export default function Post({ post }) {
   return (
     <Link href={`posts/${post.id}`}>
-      <div className="border bg-sliced-purple flex">
-        <div className="h-30 w-20 relative m-1">
+      <div className=" bg-sliced-purple flex rounded-2xl">
+        <div className="h-30 w-20 relative m-3">
           <Image src={post.img} alt="" fill={true} />
         </div>
         <div className="flex flex-col justify-around">

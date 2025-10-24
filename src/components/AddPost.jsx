@@ -1,7 +1,9 @@
+import styles from "./addpost.module.css";
+
 export default function AddPost({ handleSubmit, post }) {
   return (
     <div className="w-full flex justify-center">
-      <div className="w-1/2 px-3 mb-6 md:mb-0 bg-white">
+      <div className="w-1/2 rounded-2xl bg-white">
         <form action={handleSubmit}>
           {/* TITLE */}
           <div className="m-4">
@@ -9,7 +11,7 @@ export default function AddPost({ handleSubmit, post }) {
               Title
             </label>
             <input
-              className="appearance-none block w-1/2 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              className={styles.input}
               name="title"
               id="title"
               type="text"
@@ -19,29 +21,37 @@ export default function AddPost({ handleSubmit, post }) {
           </div>
 
           {/* CONTENT */}
-          <label className="block text-gray-700 text-bg font-bold mb-2">
-            Post
-          </label>
-          <input
-            className=" block w-1/4 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            name="content"
-            id="content"
-            type="text"
-            defaultValue={post?.content || ""}
-            required
-          />
+          <div className="m-4">
+            <label className="block text-gray-700 text-bg font-bold mb-2">
+              Post
+            </label>
+            <input
+              className={styles.input}
+              name="content"
+              id="content"
+              type="text"
+              defaultValue={post?.content || ""}
+              required
+            />
+          </div>
           {/* IMG */}
-          <label className="block text-gray-700 text-bg font-bold mb-2">
-            Image link
-          </label>
-          <input
-            className="block w-1/4 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            name="img"
-            id="img"
-            type="text"
-            defaultValue={post?.img || ""}
-          />
-          <button type="submit">Submit</button>
+          <div className="m-4">
+            <label className="block text-gray-700 text-bg font-bold mb-2">
+              Image link
+            </label>
+            <input
+              className={styles.input}
+              name="img"
+              id="img"
+              type="text"
+              defaultValue={post?.img || ""}
+            />
+          </div>
+          <div className="text-center m-4">
+            <button type="submit" className="submit-button">
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>
