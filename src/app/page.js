@@ -15,9 +15,6 @@ export default function Home() {
         <div className="m-4 bg-sliced-blue p-2 rounded-2xl text-white">
           Is it the best thing since sliced bread, or just marketing B-S?
         </div>
-        <div className="m-4 bg-sliced-blue p-2 rounded-2xl text-white">
-          Come join the chat
-        </div>
       </div>
     </div>
   );
