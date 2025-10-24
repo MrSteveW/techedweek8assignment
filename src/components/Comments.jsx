@@ -15,22 +15,20 @@ export default async function Comments({ id }) {
     await db.query(`SELECT * FROM comments WHERE post_id = ${id}`)
   ).rows;
   return (
-    <div>
-      <div>
-        <div className="">
-          {comments.map((comment) => (
-            <div key={comment.id} className="bg-green-300 p-4 mb-4">
-              <p>{comment.username}</p>
-              {/* <p>Posted on {comment.created_at}</p> */}
-              <p>{comment.content}</p>
-              <DeleteButton
-                commentId={comment.id}
-                postId={id}
-                handleDelete={handleDelete}
-              />
-            </div>
-          ))}
-        </div>
+    <div className="w-full justify-items-center">
+      <div className="w-1/2 bg-red-200 flex flex-col ">
+        {comments.map((comment) => (
+          <div key={comment.id} className=" bg-green-300 p-4 mb-4">
+            <p>{comment.username}</p>
+            {/* <p>Posted on {comment.created_at}</p> */}
+            <p>{comment.content}</p>
+            <DeleteButton
+              commentId={comment.id}
+              postId={id}
+              handleDelete={handleDelete}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

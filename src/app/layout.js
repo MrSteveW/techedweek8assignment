@@ -1,4 +1,5 @@
 import NavBar from "../components/NavBar";
+import bg from "../../public/bg.webp";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
