@@ -25,8 +25,8 @@ async function EditPost({ params }) {
 
     const { title, content, img } = Object.fromEntries(formData);
     await db.query(
-      `UPDATE posts SET title = $1, content = $2, img = $3 WHERE id = $5`,
-      [title, content, img, id]
+      `UPDATE posts SET username = $1, title = $2, content = $3, img = $4 WHERE id = $5`,
+      [user.username, title, content, img, id]
     );
     revalidatePath("/posts");
     redirect("/posts");
