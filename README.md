@@ -23,6 +23,7 @@
 ## :dart: Goals not acheived yet
 
 - [ ] Edit for comments, I could but I'm stopping here
+- [ ] Better validation for image url, I know I can use Regexp to match with known image patterns
 
 ## With thanks to
 
