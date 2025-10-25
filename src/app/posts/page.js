@@ -19,8 +19,13 @@ async function AllPosts({ searchParams }) {
   return (
     <div className="h-screen">
       <div className="text-center m-4 text-xl text-white">
-        <Link href="/posts/?sort=asc">ascending</Link> or{" "}
-        <Link href="/posts/?sort=desc">descending</Link>
+        <Link href="/posts/?sort=asc" className="hover:text-sliced-cyan">
+          ascending
+        </Link>{" "}
+        or{" "}
+        <Link href="/posts/?sort=desc" className="hover:text-sliced-cyan">
+          descending
+        </Link>
       </div>
       <div className="flex flex-wrap">
         {sortedPosts.map((post) => (

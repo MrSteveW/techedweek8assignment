@@ -43,7 +43,7 @@ export default function AddPost({ handleSubmit, post }) {
               className={styles.input}
               name="img"
               id="img"
-              type="text"
+              type="url"
               defaultValue={post?.img || ""}
             />
           </div>

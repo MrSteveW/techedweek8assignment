@@ -1,6 +1,6 @@
 "use client";
 
-export default function DeleteButton({ commentId, postId, handleDelete }) {
+export default function DelCommentButton({ commentId, postId, handleDelete }) {
   return (
     <button
       onClick={() => {

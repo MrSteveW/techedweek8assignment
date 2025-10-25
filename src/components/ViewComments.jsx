@@ -1,5 +1,5 @@
 import { db } from "@/utils/utilities";
-import DeleteButton from "./DeleteButton";
+import DelCommentButton from "./DelCommentButton";
 import { revalidatePath } from "next/cache";
 
 async function handleDelete(id, postId) {
@@ -24,7 +24,7 @@ export default async function Comments({ id }) {
               {new Date(comment.created_at).toLocaleDateString("en-GB")}
             </p>
             <p>{comment.content}</p>
-            <DeleteButton
+            <DelCommentButton
               commentId={comment.id}
               postId={id}
               handleDelete={handleDelete}

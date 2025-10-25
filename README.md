@@ -1,7 +1,9 @@
 Custom colors in globals.css
 Module stylesheets
 
-Conditionally render an Edit link
+Conditionally render an Edit link for just the user logged in
+
+opengraph-image.png
 
 With thanks to
 Toasted bread slice cartoon sticker, brgfx

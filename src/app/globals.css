@@ -30,14 +30,15 @@ body {
 }
 
 .delete-button {
-  background-color: red;
-  padding: 0.5em;
+  background-color: rgb(240, 67, 67);
+  font-size: 0.7em;
+  padding: 0.3em;
   border-radius: 0.5em;
   margin: 0.5em;
   cursor: pointer;
 }
 
-.submit-button:hover {
+.delete-button:hover {
   background-color: var(--color-sliced-purple);
   color: white;
 }

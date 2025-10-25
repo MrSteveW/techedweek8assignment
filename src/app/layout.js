@@ -28,6 +28,11 @@ const krub = Krub({
 export const metadata = {
   title: "Sliced Bread",
   description: "Is it as good as sliced bread?",
+  openGraph: {
+    title: "Sliced Bread",
+    description: "Is it as good as sliced bread?",
+    url: "https://techedweek8assignment.vercel.app/",
+  },
 };
 
 export default async function RootLayout({ children }) {
